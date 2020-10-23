@@ -7,7 +7,7 @@ function ucfirst(str){
 function capitalize(str){
      if(typeof str !== "string") return "";
     //return str.toLowerCase().split(" ").map(word => ucfirst(word)).join(" ");
-    const regexCapitalize = /(^\w|(\s)\w)/gi; //check first char in string + char following space
+    const regexCapitalize = /(^\w|(_)\w|(\s)\w)/gi; //check first char in string + first char following space or _
     return str.replace(regexCapitalize, x => x.toUpperCase());
 }
 // camelCase

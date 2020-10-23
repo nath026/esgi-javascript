@@ -1,5 +1,4 @@
 function myFunction(value, typeToCheck) {
-  const typeValue = typeof value;
   if (typeToCheck === typeof value) {
     return true;
   }  
