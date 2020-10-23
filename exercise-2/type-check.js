@@ -1,4 +1,4 @@
-function myFunction(value, typeToCheck) {
+function type_check_v1(value, typeToCheck) {
   if (typeToCheck === typeof value) {
     return true;
   }  
