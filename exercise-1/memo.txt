@@ -1,2 +1,0 @@
-toutes les fonctions tiennent sur 2 lignes
-les fonctions en rouge sont notées
