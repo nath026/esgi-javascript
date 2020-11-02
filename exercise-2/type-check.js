@@ -1,7 +1,7 @@
 function type_check_v1(value, typeToCheck) {
-  if (typeToCheck === typeof value) 
+  if (typeof value !== "object") 
   {
-    return true;
+    return typeToCheck === typeof value;
   }  
   else
   {
@@ -14,16 +14,19 @@ function type_check_v1(value, typeToCheck) {
        	return value === null;
       }
   }
-    return false;
+    return value !== null && !Array.isArray(value);
 }
-/*
-console.log(type_check_v1("rabbit", "null"));
-console.log(type_check_v1("rabbit", "array"));
-console.log(type_check_v1("null", "null"));
-console.log(type_check_v1(null, "null"));
-console.log(type_check_v1([], "array"));
-console.log(type_check_v1([], "object"));
-*/
+console.log("1"+type_check_v1("null", "null"));
+console.log("2"+type_check_v1("null", "object"));
+console.log("3"+type_check_v1(null, "object")); //false
+console.log("4"+type_check_v1(null, "null"));
+console.log("5"+type_check_v1([], "array"));
+console.log("6"+type_check_v1([], "object")); //false
+console.log("7"+type_check_v1(function f(){},"function"));
+console.log("7bis"+type_check_v1(function f(){},"object"));//false
+var undeclaredVar;
+console.log("8"+type_check_v1(undeclaredVar,"undefined"));
+console.log("9"+type_check_v1(undeclaredVar,"object")); //false
 
 function type_check_v2(){
 
